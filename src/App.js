@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Llamando from "./componentes/llamando";
 const maxDigitos = 9;
 
 let temporizador;
@@ -38,7 +39,7 @@ function App() {
 
   return (
     <div className="contenedor">
-      <span className={`mensaje${!llamando ? " off" : ""}`}>Llamando...</span>
+      <Llamando llamando={llamando} />
       <main className="telefono">
         <div className="botones">
           <ol className="teclado">
