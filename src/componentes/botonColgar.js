@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+/* import PropTypes from "prop-types";
 
 const BotonColgar = props => {
   const { colgar } = props;
@@ -12,3 +12,4 @@ BotonColgar.protoTypes = {
 };
 
 export default BotonColgar;
+ */

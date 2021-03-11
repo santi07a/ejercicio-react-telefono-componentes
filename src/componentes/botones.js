@@ -1,13 +1,12 @@
-import PropTypes from "prop-types";
+/* import PropTypes from "prop-types";
 import BotonColgar from "./botonColgar";
 import BotonLlamar from "./botonLlamar";
 
 const Botones = props => {
   const { llamando, esNumeroCompleto, llamar, colgar } = props;
   return (
-    !llamando
-      ? <BotonLlamar esNumeroCompleto={esNumeroCompleto} llamar={llamar}></BotonLlamar>
-      : <BotonColgar colgar={colgar}></BotonColgar>
+     ? <BotonLlamar esNumeroCompleto={esNumeroCompleto} llamar={llamar}></BotonLlamar>
+    : <BotonColgar colgar={colgar}></BotonColgar>
   );
 };
 
@@ -19,3 +18,4 @@ Botones.protoTypes = {
 };
 
 export default Botones;
+ */

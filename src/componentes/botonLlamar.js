@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+/* import PropTypes from "prop-types";
 
 const BotonLlamar = props => {
   const { esNumeroCompleto, llamar } = props;
@@ -17,3 +17,4 @@ BotonLlamar.protoTypes = {
 };
 
 export default BotonLlamar;
+ */
