@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Botones from "./componentes/botones";
 import Display from "./componentes/display";
 import Llamando from "./componentes/llamando";
 import Teclas from "./componentes/Teclas";
@@ -48,15 +49,7 @@ function App() {
         </div>
         <div className="acciones">
           <Display numero={numero} />
-          {
-            !llamando
-              ? <a
-                href="llamar"
-                className={`llamar${esNumeroCompleto ? " activo" : ""}`}
-                onClick={llamar}
-              >Llamar</a>
-              : <a href="colgar" className="colgar activo" onClick={colgar}>Colgar</a>
-          }
+          <Botones llamando={llamando} esNumeroCompleto={esNumeroCompleto} llamar={llamar} colgar={colgar}></Botones>
         </div>
       </main>
     </div>
