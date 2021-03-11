@@ -1,16 +1,11 @@
 import PropTypes from "prop-types";
+import TeclaNumeros from "./TeclaNumeros";
 
 const Teclas = (props) => {
   const { llamando, anyadirDigito, borrarUltimoDigito } = props;
   return (
     <ol className="teclado">
-      {
-        [...[...Array(10)].map((x, i) => i).slice(1), 0].map(digito => (
-          <li key={digito}>
-            <button disabled={llamando} onClick={() => anyadirDigito(digito)}>{digito}</button>
-          </li>
-        ))
-      }
+      <TeclaNumeros llamando={llamando} anyadirDigito={anyadirDigito} />
       <li><button disabled={llamando} className="big" onClick={borrarUltimoDigito}>borrar</button></li>
     </ol>
   );
