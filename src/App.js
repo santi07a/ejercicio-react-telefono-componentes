@@ -1,31 +1,68 @@
+import { useState } from "react";
+const maxDigitos = 9;
+
+let temporizador;
+
 function App() {
+  const [numero, setNumero] = useState("");
+  const [llamando, setLlamando] = useState(false);
+  const esNumeroCompleto = numero.length === maxDigitos;
+
+  const anyadirDigito = digito => {
+    if (numero.length < maxDigitos) {
+      setNumero(numero + digito);
+    }
+  };
+  const borrarUltimoDigito = () => setNumero(numero.slice(0, -1));
+  /* const borrarNumero = () => setNumero(""); */
+
+  const llamar = e => {
+    e.preventDefault();
+    if (esNumeroCompleto) {
+      setLlamando(true);
+      temporizador = setTimeout(() => {
+        colgar();
+      }, 5000);
+    }
+  };
+
+  const colgar = e => {
+    if (typeof e !== "undefined") {
+      e.preventDefault();
+    }
+
+    setNumero("");
+    setLlamando(false);
+    clearTimeout(temporizador);
+  };
+
   return (
     <div className="contenedor">
-      {/* <!-- El siguiente elemento se oculta añadiéndole la clase "off" --> */}
-      <span className="mensaje">Llamando...</span>
+      <span className={`mensaje${!llamando ? " off" : ""}`}>Llamando...</span>
       <main className="telefono">
         <div className="botones">
           <ol className="teclado">
-            <li><button>1</button></li>
-            <li><button>2</button></li>
-            <li><button>3</button></li>
-            <li><button>4</button></li>
-            <li><button>5</button></li>
-            <li><button>6</button></li>
-            <li><button>7</button></li>
-            <li><button>8</button></li>
-            <li><button>9</button></li>
-            <li><button>0</button></li>
-            <li><button className="big">borrar</button></li>
+            {
+              [...[...Array(10)].map((x, i) => i).slice(1), 0].map(digito => (
+                <li key={digito}>
+                  <button disabled={llamando} onClick={() => anyadirDigito(digito)}>{digito}</button>
+                </li>
+              ))
+            }
+            <li><button disabled={llamando} className="big" onClick={borrarUltimoDigito}>borrar</button></li>
           </ol>
         </div>
         <div className="acciones">
-          <span className="numero">667359961</span>
-          {/* <!-- El botón de llamar debe tener la clase "activo" cuando -->
-                <!-- el número de teléfono tiene 9 cifras --> */}
-          <a href="llamar" className="llamar">Llamar</a>
-          {/* <!-- Sólo se tiene que ver un botón u otro --> */}
-          <a href="colgar" className="colgar activo">Colgar</a>
+          <span className="numero">{numero}</span>
+          {
+            !llamando
+              ? <a
+                href="llamar"
+                className={`llamar${esNumeroCompleto ? " activo" : ""}`}
+                onClick={llamar}
+              >Llamar</a>
+              : <a href="colgar" className="colgar activo" onClick={colgar}>Colgar</a>
+          }
         </div>
       </main>
     </div>
