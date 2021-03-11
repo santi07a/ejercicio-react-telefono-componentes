@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Display from "./componentes/display";
 import Llamando from "./componentes/llamando";
 const maxDigitos = 9;
 
@@ -54,7 +55,7 @@ function App() {
           </ol>
         </div>
         <div className="acciones">
-          <span className="numero">{numero}</span>
+          <Display numero={numero} />
           {
             !llamando
               ? <a
