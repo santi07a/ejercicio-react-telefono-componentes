@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import TeclaBorrar from "./TeclaBorrar";
 import TeclaNumeros from "./TeclaNumeros";
 
 const Teclas = (props) => {
@@ -6,7 +7,7 @@ const Teclas = (props) => {
   return (
     <ol className="teclado">
       <TeclaNumeros llamando={llamando} anyadirDigito={anyadirDigito} />
-      <li><button disabled={llamando} className="big" onClick={borrarUltimoDigito}>borrar</button></li>
+      <TeclaBorrar llamando={llamando} borrarUltimoDigito={borrarUltimoDigito} />
     </ol>
   );
 };
