@@ -14,10 +14,10 @@ const Botones = props => {
 };
 
 Botones.protoTypes = {
-  llamando: PropTypes.bool,
-  esNumeroCompleto: PropTypes.bool,
-  llamar: PropTypes.func,
-  colgar: PropTypes.func
+  llamando: PropTypes.bool.isRequired,
+  esNumeroCompleto: PropTypes.bool.isRequired,
+  llamar: PropTypes.func.isRequired,
+  colgar: PropTypes.func.isRequired
 };
 
 export default Botones;
