@@ -13,4 +13,11 @@ const Botones = props => {
   );
 };
 
+Botones.protoTypes = {
+  llamando: PropTypes.bool,
+  esNumeroCompleto: PropTypes.bool,
+  llamar: PropTypes.func,
+  colgar: PropTypes.func
+};
+
 export default Botones;
