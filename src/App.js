@@ -1,6 +1,6 @@
 import { useState } from "react";
 /* import Botones from "./componentes/botones"; */
-import BotonGenerico from "./componentes/botonGenerico";
+import BotonGenerico from "./componentes/BotonGenerico";
 import Display from "./componentes/display";
 import Llamando from "./componentes/llamando";
 import Teclas from "./componentes/Teclas";
@@ -50,7 +50,7 @@ function App() {
         </div>
         <div className="acciones">
           <Display numero={numero} />
-          <BotonGenerico esNumeroCompleto={esNumeroCompleto} accion={llamando ? colgar : llamar}></BotonGenerico>
+          <BotonGenerico esNumeroCompleto={esNumeroCompleto} accion={llamando ? colgar : llamar} texto={llamando ? "colgar" : "llamar"} ></BotonGenerico>
         </div>
       </main>
     </div>
