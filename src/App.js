@@ -1,6 +1,6 @@
 import { useState } from "react";
 /* import Botones from "./componentes/botones"; */
-import BotonGenerico from "./componentes/BotonGenerico";
+import BotonGenerico from "./componentes/ botonGenerico";
 import Display from "./componentes/display";
 import Llamando from "./componentes/llamando";
 import Teclas from "./componentes/Teclas";
