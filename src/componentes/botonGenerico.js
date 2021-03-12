@@ -1,19 +1,20 @@
 import PropTypes from "prop-types";
 
 const BotonGenerico = props => {
-  const { esNumeroCompleto, accion } = props;
+  const { esNumeroCompleto, accion, texto } = props;
   return (
     <a
       href={accion.name}
       className={`${accion.name}${esNumeroCompleto ? " activo" : ""}`}
       onClick={accion}
-    >{accion.name}</a>
+    >{texto}</a>
   );
 };
 
 BotonGenerico.protoTypes = {
   esNumeroCompleto: PropTypes.bool.isRequired,
-  accion: PropTypes.func.isRequired
+  accion: PropTypes.func.isRequired,
+  texto: PropTypes.string.isRequired
 };
 
 export default BotonGenerico;
